@@ -13,7 +13,7 @@ membersRouter.get("/:id", viewMember);
 membersRouter.get("/", viewAllMembers);
 
 //Update member record members/
-membersRouter.put("/", updateMember);
+membersRouter.put("/:id", updateMember);
 
 //Delete a member members/:id
 membersRouter.delete("/:id", deleteMember);
