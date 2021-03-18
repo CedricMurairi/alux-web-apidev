@@ -1,9 +1,9 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../db/dbConnect.js";
 
-const Borrowing = sequelize.define('borrowing', {
+const Borrowing = sequelize.define('borrowings', {
     borrowing_id: {
-        autoincrement: true,
+        autoIncrement: true,
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
@@ -16,6 +16,14 @@ const Borrowing = sequelize.define('borrowing', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
+    borrowed_on: {
+        type: Sequelize.DATE,
+        allowNull: true
+    },
+    returned_on: {
+        type: Sequelize.DATE,
+        allowNull: true
+    },
     returned: {
         type: Sequelize.BOOLEAN,
         allowNull: true
@@ -23,7 +31,7 @@ const Borrowing = sequelize.define('borrowing', {
 }, {
     sequelize,
     tableName: 'borrowings',
-    timestamps: true,
+    timestamps: false,
     indexes: [{
         name: "PRIMARY",
         unique: true,
