@@ -3,9 +3,9 @@ import { sequelize } from "../db/dbConnect.js";
 
 const Member = sequelize.define('member', {
     member_id: {
-        autoincrement: true,
-        type: Sequelize.INTEGER,
-        allowNull: true,
+        autoIncrement: true,
+        type: Sequelize.BIGINT,
+        allowNull: false,
         primaryKey: true
     },
     member_name: {
@@ -43,6 +43,7 @@ const Member = sequelize.define('member', {
     indexes: [{
         name: "PRIMARY",
         unique: true,
+        using: "BTREE",
         fields: [
             { name: "member_id" }
         ]
