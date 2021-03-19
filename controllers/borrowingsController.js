@@ -42,7 +42,7 @@ export async function borrowBook(req, res) {
 export async function returnBook(req, res) {
     let borrowing = await Borrowing.findOne({where: {member_id: req.body.member_id, book_id: req.body.book_id, returned: false}});
     let book = await Book.findOne({where: {book_id: req.body.book_id}});
-    let member = await member.findOne({where: {member_id: req.body.member_id}});
+    let member = await Member.findOne({where: {member_id: req.body.member_id}});
 
     try {
         if (borrowing && book && member) {
