@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
 import { sequelize } from "../db/dbConnect.js";
 
-const Member = sequelize.define('member', {
+const Member = sequelize.define('members', {
     member_id: {
         autoIncrement: true,
         type: Sequelize.BIGINT,
